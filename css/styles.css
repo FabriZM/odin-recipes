@@ -1,0 +1,30 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+}
+
+h1 {
+    text-align: left;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+img {
+    border-radius: 15px;
+    height: auto;
+    width: 500px;
+}
+
+p {
+    max-width: 500px;
+}
+
+ol, ul {
+    margin: 20px;
+    max-width: 600px;
+}
+
+div {
+    display: flexbox;
+    place-items: center;
+}
