@@ -2,9 +2,10 @@
 
 
 :root {
-    --clr-dark: #0d0d0e;
-    --clr-dark2: #202022;
-    --clr-accent: rgb(241, 189, 146); 
+    --clr-dark: #ffffff;
+    --clr-dark2: #f1f1f1;
+    --clr-accent: rgb(125, 163, 245);
+    --clr-text: rgb(0, 0, 0); 
 }
 
 *,
@@ -23,22 +24,29 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
     background-color: var(--clr-dark);
-    color: white;
+    color: var(--clr-text);
+}
+html {
+    margin: 10px auto;
+    display: table;
 }
 
 .logo {
     align-self: first baseline;
     font-family: kufam;
     font-weight: 100;
-    margin-top: 32px;
+    margin: 32px 0;
 }
 
-html {
-    margin: auto;
-    display: table;
+.fab {
+    color: var(--clr-accent);
 }
 
-
+.header {
+    font-size: 18px;
+    display: inline-flex;
+    margin-bottom: 5px;
+}
 
 .desc {
     display: inline-block;
@@ -48,29 +56,9 @@ html {
 
 
 .title {
-    color: rgb(228, 235, 236);
+    color: var(--clr-text);
     font-size: 32px;
     font-weight: 800;
-    display: inline-flex;
-    margin-bottom: 20px;
-}
-
-.recipes {
-    position: relative;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.recipe {
-    position: absolute;
-    bottom: 0%;
-    right: -90%;
-    font-size: 32px;
-}
-
-
-.header {
-    font-size: 18px;
     display: inline-flex;
     margin-bottom: 20px;
 }
@@ -78,7 +66,12 @@ html {
 .description {
     background-color: var(--clr-dark2);
     border-radius: 10px;
-    padding-top: 6px;
+    padding: 12px 12px;
+    margin: 0 -12px;
+}
+
+.recipes {
+    display: inline-block;
 }
 
 
@@ -93,7 +86,7 @@ img {
     max-width: 300px;
     height: 300px;
     opacity: 0.9;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     object-fit: cover;
 }
 
@@ -106,12 +99,11 @@ ul {
 h3 {
     font-size: 28px;
     border-bottom: 2px solid var(--clr-accent);
-    padding-bottom: 5px;
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--clr-text);
     padding-right: 5px;
 }
