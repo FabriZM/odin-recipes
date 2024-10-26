@@ -2,10 +2,10 @@
 
 
 :root {
-    --clr-dark: #ffffff;
-    --clr-dark2: #f1f1f1;
+    --clr-light: #ffffff;
+    --clr-light2: #f1f1f1;
     --clr-accent: rgb(125, 163, 245);
-    --clr-text: rgb(0, 0, 0); 
+    --clr-text: rgb(0, 0, 0);
 }
 
 *,
@@ -23,35 +23,45 @@
 
 body {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: var(--clr-dark);
+    background-color: var(--clr-light);
     color: var(--clr-text);
-}
-html {
-    margin: 10px auto;
-    display: table;
 }
 
 .logo {
     align-self: first baseline;
     font-family: kufam;
     font-weight: 100;
-    margin: 32px 0;
+    margin: 32px;
 }
 
-.fab {
+.fab,
+.selected {
     color: var(--clr-accent);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
 }
 
 .header {
     font-size: 18px;
-    display: inline-flex;
     margin-bottom: 5px;
 }
 
+.recipe-card {
+    background-color: var(--clr-light2);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 0 -12px;
+    display: flex;
+    flex: auto;
+}
+
 .desc {
-    display: inline-block;
-    position: absolute;
     margin-left: 24px;
+    width: 40ch
 }
 
 
@@ -59,26 +69,18 @@ html {
     color: var(--clr-text);
     font-size: 32px;
     font-weight: 800;
-    display: inline-flex;
+    display: inline-block;
+    margin-top: 24px;
     margin-bottom: 20px;
-}
-
-.description {
-    background-color: var(--clr-dark2);
-    border-radius: 10px;
-    padding: 12px 12px;
-    margin: 0 -12px;
+    border-bottom: 2px solid var(--clr-accent);
 }
 
 .recipes {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
-
-
-p {
-    width: 40ch;
-}
-
 
 img {
     border-radius: 10px;
@@ -86,7 +88,7 @@ img {
     max-width: 300px;
     height: 300px;
     opacity: 0.9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     object-fit: cover;
 }
 
@@ -96,14 +98,10 @@ ul {
     margin-left: 32px;
 }
 
-h3 {
-    font-size: 28px;
-    border-bottom: 2px solid var(--clr-accent);
-    margin-top: 24px;
-}
 
-a {
+a,
+.header {
     text-decoration: none;
+
     color: var(--clr-text);
-    padding-right: 5px;
 }
