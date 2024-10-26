@@ -4,7 +4,7 @@
 :root {
     --clr-light: #ffffff;
     --clr-light2: #f1f1f1;
-    --clr-accent: rgb(125, 163, 245);
+    --clr-accent: rgb(92, 144, 165);
     --clr-text: rgb(0, 0, 0);
 }
 
@@ -27,14 +27,26 @@ body {
     color: var(--clr-text);
 }
 
-.logo {
-    align-self: first baseline;
-    font-family: kufam;
-    font-weight: 100;
-    margin: 32px;
+.nav-bar {
+    background-color: var(--clr-accent);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
 }
 
-.fab,
+.logo {
+    font-family: kufam, Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    padding: 8px 0 0 16px;
+}
+
+.fab {
+    color: var(--clr-light);
+}
 .selected {
     color: var(--clr-accent);
 }
@@ -43,10 +55,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-self: center;
+    margin: 0px 2rem;
 }
 
+
 .header {
-    font-size: 18px;
     margin-bottom: 5px;
 }
 
@@ -56,23 +69,24 @@ body {
     padding: 12px;
     margin: 0 -12px;
     display: flex;
-    flex: auto;
+    gap: 2rem;
 }
 
 .desc {
-    margin-left: 24px;
-    width: 40ch
+    max-width: 40ch;
 }
-
 
 .title {
     color: var(--clr-text);
-    font-size: 32px;
     font-weight: 800;
     display: inline-block;
-    margin-top: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     border-bottom: 2px solid var(--clr-accent);
+    font-size: 24px;
+}
+
+.prep div {
+    margin-top: 20px;
 }
 
 .recipes {
@@ -84,9 +98,11 @@ body {
 
 img {
     border-radius: 10px;
-    width: 100%;
     max-width: 300px;
-    height: 300px;
+    min-width: 100px;
+    max-height: 300px;
+    min-height: 100px;
+    aspect-ratio: 1;
     opacity: 0.9;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     object-fit: cover;
@@ -94,7 +110,7 @@ img {
 
 ol,
 ul {
-    width: 80ch;
+    max-width: 80ch;
     margin-left: 32px;
 }
 
@@ -105,3 +121,29 @@ a,
 
     color: var(--clr-text);
 }
+
+@media only screen and (max-width: 700px) {
+    .content {
+        font-size: smaller;
+        margin: 0 .5rem;
+    }
+    .title {
+        font-size: large;
+    }
+    .recipes {
+        flex-direction: column;
+    }
+
+    .recipe-card{
+        gap: 1rem;
+    }
+
+    img {
+        max-width: 200px;
+        min-height: 150px;
+        flex-basis: auto;
+    }
+    .logo {
+        font-size: 22px;
+    }
+  }
